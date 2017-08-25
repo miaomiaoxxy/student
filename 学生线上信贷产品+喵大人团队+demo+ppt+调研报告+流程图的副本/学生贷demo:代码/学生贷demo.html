@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">>
+<head>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<script src="/jquery/jquery-1.11.1.min.js"></script>
+<style type="text/css">
+	#btn{
+    position: relative;
+    left: 1000px;
+	margin: 0 auto;
+	}
+  .btn
+  .pyjbtn{
+    right: 10px;
+    data-theme：f;
+    !important
+  }
+</style>
+
+<script>
+$(document).ready(function(){
+ 
+    $(".leiz").css({"left":"10px";});
+  });
+
+</script>
+</head>
+<body>
+
+<!-- 主页面 银行借界面-->
+<div data-role="page" id="pageone"  >
+  <div data-role="header">
+
+    <h1>学生贷</h1>
+    <a href="#" data-role="button" data-icon="search" class="ul-btn-right">搜索</a>
+  </div>
+  <div data-role="content">
+  <div>
+
+           <script>
+                $(document).ready(function(){
+                  a=3;
+                     num66 = $('#ff input[type="radio"]:checked').val();
+                     a=parseInt(num66);
+                   $("#ff").click(function(){
+                    //$("#hk").text(num333);
+                    var num66 = $('#ff input[type="radio"]:checked').val();
+                    a=parseInt(num66);
+                     var num222=$("#points").val();
+                      
+                    var num333=Math.round(num222/a+num222*0.03);
+                   // alert (num333);
+                    $("#hk").text(num333);
+                  //return a;
+                });
+              });
+
+            
+              function miaomi (){
+                var num22=document.getElementById("points").value;
+                 document.getElementById("je").innerHTML=num22;
+                 //alert(num22);
+                  num33=Math.round(num22/a+num22*0.03);
+                
+                 document.getElementById("hk").innerHTML=num33;
+                    };
+
+            
+            </script>
+     </div>
+
+  		<form method="post" action="demoform.asp">
+      		<div data-role="fieldcontain" data-role="none">
+       			  <h2 style="text-align:center; "> <font color="gray">申请金额(元)</font></h2>
+              <p id="je" style="text-align:center; font-size:60px; margin:0 auto;">1000</p>
+        			<input type="range" name="points" id="points" value="1000" min="0" max="10000" data-highlight="true" onchange="miaomi()">
+      		</div>
+    	</form>
+     <p style="text-align:center; font-size:20px; "> <font color="gray">日费率：1￥/1000￥/1天</font></p>
+    <form method="post" action="demoform.asp" id="ff" >
+      	<fieldset data-role="controlgroup" data-type="horizontal">
+      		<legend ><font color="gray" size=4px;>借款期限:</font></legend>
+       		 <label for="male">3个月</label>
+        		<input type="radio" name="gender" id="male" value="3" checked="checked">
+        	<label for="female">6个月</label>
+        		<input type="radio" name="gender" id="female" value="6">
+        	<label for="year">9个月</label>
+        		<input type="radio" name="gender" id="year" value="9">
+          <label for="year1">1年</label>
+            <input type="radio" name="gender" id="year1" value="12">
+          <label for="year2">2年</label>
+            <input type="radio" name="gender" id="year2" value="24">
+      </fieldset>
+    </form> 
+    <br>
+     <hr 2px;>
+        <h2 style="text-align:center; margin: 40px auto 60px; "><font color="gray">每月应还款：</font><span id="hk">363</span>元</h2>
+        <div data-role="none" style="width:80%; text-align:center; margin: 0 auto;"><a href="#pagetwo"  data-role="button"  data-icon="arrow-r" data-theme="b" >提交申请</a></div>
+       <!--
+        <form method="post" action="demoform.asp">
+          <fieldset data-role="fieldcontain">
+          <label for="day" data-theme="b">借款时间</label>
+            <select name="day" id="day">
+              <option value="mon">3个月</option>
+              <option value="tue">6个月</option>
+              <option value="wed">9个月</option>
+              <option value="thu">一年</option>
+              <option value="fri">两年</option>
+            </select>
+          </fieldset>
+       <input type="submit" data-inline="true" value="提交">
+       </form>
+    --> 
+  </div>
+
+  <div data-role="footer"  data-position="fixed">
+  <div data-role="navbar"  >
+    <ul>
+      <li><a href="#pageone" data-icon="home" >首页</a></li>
+      <li><a href="#pagefour"  data-icon="arrow-r" >同学帮</a></li>
+      <li><a href="#pagefive"  data-icon="star">兼职购</a></li>
+      <li><a href="#pagesix" data-icon="star">我的</a></li>
+    </ul>
+  </div>
+  </div>
+</div> 
+
+
+
+
+<!-- 主页面转到的提交页面-->
+<div data-role="page" id="pagetwo">
+  <div data-role="header">
+    <h1>尊敬的用户</h1>
+  </div>
+
+  <div data-role="content">
+   
+   <h2 style="text-align:center; margin: 40px auto 60px; "><font color="gray">您的申请已成功提交！</font></h2>
+    
+    <div data-role="none" style="width:120px; text-align:center; margin: 0 auto;"><a href="#pageone"  data-role="button"  data-icon="arrow-l"  >返回</a></div>
+  </div>
+    <hr>
+
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+    <ul>
+      <li><a href="#pageone" data-icon="home" >首页</a></li>
+      <li><a href="#pagefour"  data-icon="arrow-r" >同学帮</a></li>
+      <li><a href="#pagefive"  data-icon="star">兼职购</a></li>
+      <li><a href="#pagesix" data-icon="star">我的</a></li>
+    </ul>
+  </div>
+  </div>
+</div>
+
+<!--主页面之提示页面-->
+<div data-role="page" id="pagethree">
+	<div data-role="header">
+		<h1>提示</h1>
+	</div>
+	<div data-role="content">
+		<p>已申请成功</p>
+	</div>
+	<div data-role="footer">
+	<h1>页脚</h1>
+	</div>
+</div>
+
+
+<!--朋友借-->
+<div data-role="page" id="pagefour">
+    <div data-role="header" data-position="fixed" >
+       <h1>同学帮</h1>
+      <a href="#pagefour1" data-role="button" class="ui-btn-right" >发布</a>
+    </div>
+    <div data-role="content">
+
+        <script>
+
+                $(document).ready(function(){
+
+                  $("#bb1").click(function(){
+                        var num77=$("#jef42").val();
+                       // alert(num77)
+                        var num88=$("#jdt").val();
+                  //alert(num88);
+                        var num99=num88*1+num77*1;
+                  //alert(num99)
+                        $("#jdt").val(num99);
+                        $("#yck").text(num99);
+                       // alert(num99);
+
+                         //$("#mm").text(num)
+                        //alert(num)
+                  });
+                });
+
+        
+           
+            </script>
+        
+       
+        <div style="background: #ebebeb;">
+  	       <p><img src="1.JPG" width="60px" height="60px" /><br><font color="gray" size="4px">killy</font></p>
+            <p><font size="4px" >借款：<strong>5000</strong>元 <br/>
+            期限：半年 <br/>
+            到期还款：<strong>5500</strong>元</font></p>
+            <p>钱不知所去，一贫如洗。各位好友可否援手小弟一波？
+            <br><img src="2.jpg" width="200px" height="200px"></p>
+        </div>
+        <hr>
+         <p ><font size="4px;" color="gray">已筹款：</font> <font size="5px";  >￥</font> <font size="5px"; id="yck" >3200</font></p>
+         <div style="height:4px; width:240px; margin: -42px auto 10px 175px;"><progress style="height:10px; width:280px; "id="jdt" value="3200" max="5000"> </progress></div>
+         <!-- <form method="post" action="demoform.asp">
+          <div data-role="fieldcontain">
+             <label for="points"> <font size="4px;" color="gray">已筹款:</font></label>
+              <input type="range"  id="points2" value="3200" min="0" max="5000" data-highlight="true">
+          </div>
+      </form>-->
+       
+
+        <div style="position:absolute; width:280px; top:560px;"><input  id="hh" type="text" name="huifu" placeholder="回复"></div>  
+          <div data-role="none" style="width:166px; text-align:center; margin: 30px auto 0 300px;">
+              <div data-role="controlgroup" data-type="horizontal">
+             <a href="#pagefour2" data-role="button" id="mmmmm" data-mini="true">借他</a>
+             
+             <button id="mmmm" data-mini="true">回复</button>
+             </div>    
+          </div>
+
+         <br/>
+         <hr style="height:4px; border-width:2px; color:gray;background-color:gray; opacity:0.5;" />
+
+
+         
+   </div>
+     <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+        <ul>
+        <li><a href="#pageone" data-icon="home" >首页</a></li>
+        <li><a href="#pagefour"  data-icon="arrow-r" class="ui-btn-active ui-state-persist">同学帮</a></li>
+        <li><a href="#pagefive"  data-icon="star">兼职</a></li>
+        <li><a href="#pagesix" data-icon="star">我的</a></li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+       <!--  <div data-role="controlgroup" data-type="horizontal">
+             <a href="#" data-role="button">借他</a>
+             <a href="#" data-role="button">按钮 2</a>
+             <a href="#" data-role="button">按钮 3</a>
+             </div> 
+--> 
+<!--盆友借发布页面-->
+
+<div data-role="page" id="pagefour1">
+  <div data-role="header">
+    <h1>同学帮</h1>
+    <a href="#pagefour" data-role="button" class="ui-btn-left" data-icon="arrow-l">返回</a>
+  </div>
+
+  <div data-role="content">
+    <h2 style="text-align:center; "> <font color="gray">我的借款</font></h2>
+     <form method="post" action="demoform.asp">
+      <div data-role="fieldcontain" style="width:400px;">
+        <label for="fullname">借款金额：</label>
+        <input type="text" name="fullname" id="fullname">       
+        <label for="bday">还款日期：</label>
+        <input type="date" name="bday" id="bday">
+        <label for="email">本息还款：</label>
+        <input type="email" name="email" id="email" >
+      </div>
+
+      <label for="fname">添加文字</label>
+      <input type="text" name="fname" id="fname">
+       <div data-role="none" style="width:166px; text-align:center; margin: 100px auto;"><input type="submit" data-inline="true" value="提交"></div>
+    </form> 
+  </div>
+   <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+        <ul>
+        <li><a href="#pageone" data-icon="home" >首页</a></li>
+        <li><a href="#pagefour"  data-icon="arrow-r" class="ui-btn-active ui-state-persist">同学帮</a></li>
+        <li><a href="#pagefive"  data-icon="star">兼职购</a></li>
+        <li><a href="#pagesix" data-icon="star">我的</a></li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+<!--盆友借借他页面-->
+<div data-role="page" id="pagefour2">
+  <div data-role="header">
+   <a href="#pagefour" data-role="button"  data-icon="arrow-l">返回</a>
+  <h1>转账到学生友账户</h1>
+    <a href="#pagefour" data-role="button"  data-icon="arrow-r">取消</a>
+     
+  </div>
+
+  <div data-role="content" style="background:#F0F0F0;">
+     <div style="text-align:center;"><p><img src="1.JPG" width="60px" height="60px" /><br><font color="gray" size="4px">killy</font></p></div>
+ 
+    <p><font size="3px;" color="gray" >转账金额</font></p>
+     <div style="position:absolute; width:460px; height:350px; margin: 5 auto; ">
+          <input id="jef42" style="position:absolute; width:100%; height:88px; font-size: 60px; " type="text" data-role="none" name="huifu" placeholder="￥" >
+          </div> 
+    
+    <div  data-role="none" style="width:40%; text-align:center; margin: 150px; auto;">
+    <button id="bb1" href="#pagefour"  data-role="button" id=”btnf42“ data-theme="b" >确认转账</button>
+    </div>
+
+    <script >
+        $(document).ready(function(){
+
+        $("#bb1").click(function(){
+         num77=$("#jef42").val();
+      
+          alert("转账成功");
+
+          //$("#mm").text(num77)
+      // alert(num77)
+
+     });
+     });
+      
+    </script>
+   </div>
+
+   <div data-role="footer" data-position="fixed"> 
+      </div>
+    </div>
+
+
+
+
+
+<!--以工抵债-->
+<div data-role="page" id="pagefive">
+
+  <div data-role="header" data-position="fixed">
+      <a href="#" data-role="button" class="ui-btn-left">西安</a>
+    <h1>兼职购</h1>
+    <a href="#" data-role="button" class="ui-btn-right">搜索</a>
+  </div>
+
+  <div data-role="content">
+  <h2 style="text-align:center; "> <font color="gray">申请金额(元)</font></h2>
+  <h1 style=" text-align:center;" id="jzje">1000</h1>
+     
+    <form method="post" action="demoform.asp">
+          <div data-role="fieldcontain">
+            
+              <input type="range" name="points1" id="points1" value="1000" min="0" max="10000" data-highlight="true" onchange="anxia()">
+          </div>
+      </form>
+      <hr>
+           <script >
+              function anxia () {
+                var num22=document.getElementById("points1").value;
+                document.getElementById("jzje").innerHTML=num22;
+               
+                var num11=parseInt(document.getElementById('ts').innerHTML);
+                var num112=parseInt(document.getElementById('ts1').innerHTML);
+                
+
+                var num33=num22/num11;
+                var num331=num22/num112;
+               document.getElementById("test4").innerHTML=num33;
+               document.getElementById("test5").innerHTML=num331;
+               document.getElementById("test6").innerHTML=num33;
+               document.getElementById("test7").innerHTML=num33;
+
+                    }
+
+                    $(document).ready(function(){
+                      $("#bm").click(function(){
+                        alert("您已成功报名！")
+                      })
+
+                    })
+            </script>
+
+            <div style="background:#EBEBEB; position:relative; height:140px;">
+                  <p><img src="5.png" width="100px" height="100px" style=" margin:10px 10px auto auto;" /><br></p>
+                  <div style="margin:-130px auto auto 120px">
+                      <h2>业务办理校园实习生</h2>
+                      <h5 style="color:gray;"> 西安  7.21~8.31 </h5>
+                      <h4><span id="ts" style="color:#FF6100; ">100元/天</span> | 工作天数<span id="test4" style="color:#FF6100; "> <strong>10</strong></span>天</h3> 
+                  </div>
+
+                  <div style="width:100px; height:20px; margin: -40px 20px 10px auto;" >
+                      <div data-role="controlgroup" data-type="horizontal">
+                          <a href="#pagefive1" type="button" data-mini="true">查看</a>
+                          <button id="bm" data-mini="true">报名</button>
+                      </div> 
+                  </div>
+           </div>
+           <hr>
+          
+
+            <div style="background:#EBEBEB; position:relative; height:140px;">
+              <p><img src="5.png" width="100px" height="100px" style=" margin:10px 10px auto auto;" /><br></p>
+               <div style="margin:-130px auto auto 120px">
+                 <h2>家教兼职</h2>
+                 <h5 style="color:gray;"> 西安  7.21~8.31 </h5>
+                  <h4><span id="ts1" style="color:#FF6100; ">200元/天</span> | 工作天数<span id="test5" style="color:#FF6100; ">5<strong></strong></span>天</h3> 
+               </div>
+                 <div style="width:100px; height:20px; margin: -40px 20px 10px auto;" >
+                      <div data-role="controlgroup" data-type="horizontal">
+                          <a href="#pagefive2" type="button" data-mini="true">查看</a>
+                          <button id="bm" data-mini="true">报名</button>
+                      </div> 
+                  </div>
+           </div>
+           <hr>
+          
+           
+
+  </div>
+  <div data-role="footer" data-position="fixed">
+  <div data-role="navbar">
+     <ul>
+        <li><a href="#pageone" data-icon="home" >首页</a></li>
+        <li><a href="#pagefour"  data-icon="arrow-r" >同学帮</a></li>
+        <li><a href="#pagefive"  data-icon="star" class="ui-btn-active ui-state-persist">兼职购</a></li>
+        <li><a href="#pagesix" data-icon="star">我的</a></li>
+      </ul>
+  </div>
+  </div>
+</div>
+
+
+<!--兼职购之查看详情-->
+
+<div data-role="page" id="pagefive1">
+
+  <div data-role="header">
+    <a href="#pagefive" type="button">返回</a>
+    <h1>详情</h1>
+    <button>收藏</button>
+  </div>
+  <div data-role="content">
+    <div style="background:white;">
+        <h2>业务办理校园实习生<span style="color:#FF6100; ">100元/天</span></h2>
+        <p><font size="3px;" color="gray">招聘30人</font></p>
+        <p><font size="3px;" color="gray">工作时间：</font>08.01~12.31 | 09：00~18：00</p>
+        <p><font size="3px;" color="gray">工作地点：</font>XX</p>
+    </div>
+     <hr>
+
+     <div style="background:white;">
+       <p><font size="3px;" color="gray">薪资福利</font></p>
+       <p>100/天<br>
+          安全保险</p>
+      <hr>
+      <p><font size="3px;" color="gray">人员要求</font></p>
+      <p>在校大学生、研究生......</p>
+      <hr>
+      <p><font size="3px;" color="gray">职位描述</font></p>
+      <ul>
+        <li>负责.....</li>
+        <li>有...经验</li>
+        <li>具备...能力</li>
+      </ul>
+
+      <p><font size="3px;" color="gray">报名截止时间</font></p>
+      <p>2018-06-01</p>
+     </div>
+  </div>
+  
+</div>
+
+<!--兼职购之查看详情2-->
+
+<div data-role="page" id="pagefive2">
+
+  <div data-role="header">
+    <a href="#pagefive" type="button">返回</a>
+    <h1>详情</h1>
+    <button>收藏</button>
+  </div>
+  <div data-role="content">
+    <div style="background:white;">
+        <h2>家教<span style="color:#FF6100; ">200元/天</span></h2>
+        <p><font size="3px;" color="gray">招聘1人</font></p>
+        <p><font size="3px;" color="gray">工作时间：</font>08.01~12.31 | 09：00~18：00</p>
+        <p><font size="3px;" color="gray">工作地点：</font>XX</p>
+    </div>
+     <hr>
+
+     <div style="background:white;">
+       <p><font size="3px;" color="gray">薪资福利</font></p>
+       <p>2che00/天<br>
+          安全保险</p>
+      <hr>
+      <p><font size="3px;" color="gray">人员要求</font></p>
+      <p>在校大学生、研究生......</p>
+      <hr>
+      <p><font size="3px;" color="gray">职位描述</font></p>
+      <ul>
+        <li>负责.....</li>
+        <li>有...经验</li>
+        <li>具备...能力</li>
+      </ul>
+
+      <p><font size="3px;" color="gray">报名截止时间</font></p>
+      <p>2018-06-01</p>
+     </div>
+  </div>
+  
+</div>
+
+<!--我的-->
+<div data-role="none" id="pagesix">
+  <div data-role="header" data-position="fixed" >
+    <h1>我的</h1>
+    <a href="#" data-role="button" class="ui-btn-right">登录</a>
+  </div>
+  <div data-role="content">
+
+    <form method="post" action="demoform.asp">
+    	<div data-role="fieldcontain">
+     		<label for="fname" class="ui-hidden-accseeible">账号:</label>
+     	 	<input type="text" name="fname" id="fname" placeholder="请输入账号">
+
+     	 	<label for="lname">密码:</label>
+     	 	<input type="text" name="lname" id="lname" placeholder="请输入密码">
+     	 
+     	</div>
+    </form>
+
+    <div data-role="none" style="width:80%; text-align:center; margin: 20px auto;"><a href="#"  data-role="button"  data-icon="arrow-r" data-theme="b" >登录</a></div>
+     <div class="leiz"  style="text-align:center" > 注册账号 | 忘记密码  </div> 
+    
+  </div>
+  <div data-role="footer" data-position="fixed">
+
+  <div data-role="navbar">
+   
+     <ul>
+        <li><a href="#pageone" data-icon="home" >首页</a></li>
+        <li><a href="#pagefour"  data-icon="arrow-r" >同学帮</a></li>
+        <li><a href="#pagefive"  data-icon="star" >兼职购</a></li>
+        <li><a href="#pagesix" data-icon="star" class="ui-btn-active ui-state-persist">我的</a></li>
+      </ul>
+  
+  </div>
+  </div>
+</div>
+
+</body>
+</html>

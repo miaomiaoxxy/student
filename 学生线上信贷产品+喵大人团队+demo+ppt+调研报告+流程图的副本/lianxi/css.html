@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+	.div{
+
+		height: 100px;
+		width: 100px;
+		background: red;
+
+	}
+</style>
+	
+	<title></title>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("li").addClass("div");
+			$("li").eq(2).removeClass("div")
+			$("li:eq(3)").click(function(){
+				$(this).toggleClass("div")
+			})
+		});
+		
+
+	</script>
+</head>
+<body>
+	<ul>
+		<li>haha</li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+</body>
+</html>

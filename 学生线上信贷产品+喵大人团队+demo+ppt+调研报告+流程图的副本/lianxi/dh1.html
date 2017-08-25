@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<script src="/jquery/jquery-1.11.1.min.js"></script>
+ <title>Document</title>
+ <style>
+ * {margin: 0;padding: 0;}
+ .box{
+ border: 1px solid #000;
+ width: 600px;
+ height: auto;
+ margin:100px auto;
+ padding:30px 0;
+ }
+ textarea{
+ width: 450px;
+ resize:none;
+ margin-left: 20px;
+ }
+ ul li{
+ width: 450px;
+ list-style: none;
+ border-bottom: 1px dotted #ccc;
+ margin-left:20px;
+ line-height: 30px;
+ color: #333;
+ }
+ ul li a{
+ float: right;
+ font-size: 12px;
+ }
+ </style>
+ <script src="../jquery-1.11.1.min.js"></script>
+ <script type="text/javascript">
+
+
+ $(document).on("pageinit","#pageone",function(){
+ 	$("<ul></ul>").appendTo('#box');
+ 	var $text = $("#box").find("textarea");
+ 	var $btn = $("#box").find("button");
+ 	$btn.on("click",function()
+ 	{
+ 		if($text.val() ==""){
+ 			alert("请输入内容");
+ 			return;
+ 			}
+		 $("ul").prepend("<li>"+$text.val()+"<a href='javascript:;'>删除</a></li>");
+ 		$text.val("");
+ 		$("a").on("click",function(){
+ 				$(this).parent("li").remove();
+ 				 })
+	})
+ })
+ </script>
+</head>
+<body>
+	<div data-role="none" id="pageone">
+		<div data-role="header"> 发布页面</div>
+ 		 <div date-role="content">
+			 <div class="box" id="box">
+			 	微博发布：</br><textarea cols="30" rows="10"></textarea>
+				 <button data-inline="true">发布</button>
+		 	</div>
+ 		</div>
+ 		<div data-role="footer" data-position="fixed">加油</div>
+	 </div>
+	 <p><img src="/i/1.JPG" width="100px" height="100px"  /></p>
+</body>
+</html>
